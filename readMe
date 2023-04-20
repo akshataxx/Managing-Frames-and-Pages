@@ -1,0 +1,35 @@
+
+Instruction : problem code works as per the assignment instructions mentioned in Assign3.pdf
+
+A3 class has 2 main components CacheManager class to manage the frames and ProcessManager class to manage the pages
+
+CacheManager class
+Description : Manages frames, keeps track of pages loaded in the frame
+Precondition : Data from input file is read and passed to the CacheManager classs
+Postcondition: loads  and removes the processes from the frames/main memory
+
+int pageStatus(int page)
+Description : Checks the frame to confirm if the page exist in the main memory
+
+void accessPage(int page)
+Description : stores the page passed by process manager into the main memory/frame
+
+void swapPage(int page)
+Description :Swaps the page in the main memory/frame
+
+void oneCycle()
+Description : simulates one time slice run
+
+ProcessManager class
+Description : keeps track of process execution scheduled using roundrobin
+Precondition : data from input file is read and passed to ProcessManager, CacheManager class is declared to manage the frames/main memory
+Postcondition: executes processses and records the fault details, turnaround time,  and total number of faults for each process.
+
+int tryExecute(int type)
+Description :simulates the execution attempt of the current process, records the fault numbers and turnaround time
+
+boolean allDone()
+Description : checks if all the processes are done and return boolean value
+
+void oneCycle()
+Description : executes the processes using CacheManager.oneCycle
